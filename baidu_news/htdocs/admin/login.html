@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>登录</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+<body>
+
+<div class="login-wrap">
+
+    <div class="login-box">
+
+        <span class="logo"></span>
+
+        <div class="color-wheel-box">
+            <span class="color-wheel"></span>
+        </div>
+
+        <h1>VOLCANO</h1>
+        <p>Management System Platform</p>
+
+        <form name="LoginForm" method="post" action="../server/login.php" onSubmit="return InputCheck(this)">
+            <div class="form-group">
+                <input type="text" name="username" id="username" class="form-control" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" class="form-control" placeholder="请输入密码">
+            </div>
+            <div class="clearfix">
+                <span class="remember-username">
+                <input type="checkbox" id="remember"/>
+                <label for="remember">记住用户名</label>
+            </span>
+                <a href="javascript:;" class="find-password">忘记密码?</a>
+            </div>
+            <button type="submit" name="submit" id="login_btn" class="btn btn-primary btn-block">登 录</button>
+            <a href="./register.html" class="btn btn-default btn-block">新用户注册</a>
+        </form>
+    </div>
+
+
+</div>
+
+
+<div class="bg-img"></div>
+<div class="md-bg"></div>
+<div class="ft-img"></div>
+
+
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script>
+    function InputCheck(LoginForm)
+    {
+        if (LoginForm.username.value == "")
+        {
+            alert("请输入用户名!");
+            LoginForm.username.focus();
+            return (false);
+        }
+        if (LoginForm.password.value == "")
+        {
+            alert("请输入密码!");
+            LoginForm.password.focus();
+            return (false);
+        }
+    }
+</script>
+</body>
+</html>

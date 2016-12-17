@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>百度新闻--用户注册</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+<body>
+
+<div class="login-wrap">
+
+    <div class="login-box">
+
+        <span class="logo"></span>
+
+        <div class="color-wheel-box">
+            <span class="color-wheel"></span>
+        </div>
+
+        <h1>VOLCANO</h1>
+        <p>新用户注册</p>
+
+        <form name="RegForm" method="post" action="../server/register.php" onSubmit="return InputCheck(this)">
+            <div class="form-group">
+                <input type="text" name="username" id="username" class="form-control" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" class="form-control" placeholder="请输入密码">
+            </div>
+            <div class="form-group">
+                <input type="password" id="repass" class="form-control" placeholder="请再次输入密码">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" id="email" class="form-control" placeholder="请输入电子邮箱">
+            </div>
+
+            <button type="submit" name="submit" id="register_btn" class="btn btn-primary btn-block">提交注册</button>
+            <a href="./login.html" class="btn btn-default btn-block">登录</a>
+        </form>
+    </div>
+
+
+</div>
+
+
+<div class="bg-img"></div>
+<div class="md-bg"></div>
+<div class="ft-img"></div>
+
+
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/user.js"></script>
+<script>
+    function InputCheck(RegForm) {
+        if (RegForm.username.value == "") {
+            alert("用户名不可为空!");
+            RegForm.username.focus();
+            return (false);
+        }
+        if (RegForm.password.value == "") {
+            alert("必须设定登陆密码!");
+            RegForm.password.focus();
+            return (false);
+        }
+        if (RegForm.repass.value != RegForm.password.value) {
+            alert("两次密码不一致!");
+            RegForm.repass.focus();
+            return (false);
+        }
+        if (RegForm.email.value == "") {
+            alert("电子邮箱不可为空!");
+            RegForm.email.focus();
+            return (false);
+        }
+    }
+</script>
+</body>
+</html>
